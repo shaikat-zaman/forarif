@@ -1,0 +1,537 @@
+/* Overall Container */
+.student-dashboard-container {
+    background: linear-gradient(135deg, #043b5f, #193f1b); /* Background with gradient */
+    color: white;
+    padding: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Make space for logout button */
+  }
+  
+  /* Title Styles */
+  .dashboard-title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  /* 3D Styled Welcome Title Box */
+.welcome-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(145deg, #1c9cd8, #1478b5);
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3), 
+                inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Hover Effect for Interactive Depth */
+.welcome-title:hover {
+    transform: translateY(-3px);
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4), 
+                inset -5px -5px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Active (Clicked) Effect */
+.welcome-title:active {
+    transform: translateY(2px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), 
+                inset -2px -2px 6px rgba(255, 255, 255, 0.1);
+}
+
+  
+  /* Select Bus Title */
+  .select-bus-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* User Info and Logout Button */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    padding: 0 20px;
+  }
+  .user-info {
+    color: #fff;
+    font-size: 0.75rem; /* Smaller font size */
+    font-weight: bold;
+    text-align: left;
+    padding: 6px 12px; /* Reduced padding */
+    max-width: 280px; /* Set a max-width to prevent overflow */
+    background: linear-gradient(145deg, #1e3c72, #2a5298); /* Sleek gradient */
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2), 
+                inset -1px -1px 3px rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Add ellipsis if the text is too long */
+    transition: all 0.3s ease-in-out;
+}
+/* "Your Booked Seats" button */
+.show-booked-seats-btn {
+    text-align: 100px; /* Align text to the left */
+    padding: 10px 20px;
+    background-color: #1c9cd8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: auto; 
+}
+
+/* Booked Seats Popup */
+.booked-seats-popup {
+    position:left;
+    text-align: left;
+    top: 0;
+    left: 500;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: flex-start; /* Align to the top */
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #ffffff;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-170%);
+    padding: 24px 28px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    z-index: 1000;
+   ;
+  }
+  
+  /* Optional subtle animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%);
+    }
+  }
+  
+  
+  .close-popup-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .close-popup-btn:hover {
+    background-color: #e53935;
+  }
+  
+  .show-booked-seats-btn {
+    position: absolute;
+    top: 90px; /* Adjusted to be below the Account section */
+    left: 7px; /* Align with the Account section */
+    padding: 10px 20px;
+    background: linear-gradient(145deg, #1e6c66, #038781);
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+.user-info:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Click Effect */
+.user-info:active {
+    transform: scale(0.97);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15), 
+                inset -1px -1px 4px rgba(255, 255, 255, 0.2);
+}
+
+  
+  .logout-btn {
+    
+      background-color: #f44336;
+      color: white;
+      padding: 5px 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 40px;  /* Stays in top-right */
+      transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+    
+  
+  .logout-btn:hover {
+    background-color: #e53935;
+    transform: translateX(-10px); /* Slide effect on hover */
+  }
+  
+  /* Available Bus Section */
+  .bus-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
+  
+  .bus-item {
+    background-color: #078284;  /* Green background for bus cards */
+    color: white;  /* Text color */
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;  /* Set width of each bus item card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px;
+  }
+  
+  .bus-item:hover {
+    transform: translateY(-5px);  /* Hover effect for lifting the card */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  .bus-item h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .bus-item p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .bus-item .book-seat-btn {
+    background-color: #11c8e1; /* Blue color for the booking button */
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bus-item .book-seat-btn:hover {
+    background-color: #15c0a1;  /* Darker blue on hover */
+  }
+  
+  /* Seat Grid */
+  .seats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin-top: 20px;
+  }
+  
+  .seat {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .seat.available {
+    background-color: #fafafa;
+    color: rgb(19, 203, 197);
+  }
+  
+  .seat.available:hover {
+    background-color: #45a049;
+  }
+  
+  .seat.booked {
+    background-color: #f44336;
+    cursor: not-allowed;
+    color: white;
+  }
+  
+  .seat.booked:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Seat Title */
+  .seat-title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #f2eded;
+  }
+  
+  /* Buttons and Select Inputs */
+  button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .student-dashboard-container {
+      padding: 20px;
+    }
+  
+    .dashboard-title {
+      font-size: 2rem;
+    }
+  
+    .select-bus-title {
+      font-size: 1.3rem;
+    }
+  
+    .bus-item {
+      font-size: 1rem;
+    }
+  
+    .seat {
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+    }
+  
+    .logout-btn {
+      font-size: 0.9rem;
+      padding: 5px 5px;
+    }
+  }
+  /* StudentDashboard.css */
+
+/* Modal container to display the booking details */
+
+  /* 3D Styled Booking Details Button */
+.booking-details-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(145deg, #0edf7ee4, #0cbb66);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), 
+                inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect for 3D effect */
+.booking-details-btn:hover {
+    background: linear-gradient(145deg, #0cbb65, #0edf7ebb);
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4), 
+                inset -3px -3px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Active (Clicked) Effect */
+.booking-details-btn:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), 
+                inset -1px -1px 3px rgba(255, 255, 255, 0.1);
+}
+/* Ticket Container */
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Ticket Design */
+.ticket {
+    display: flex;
+    width: 95%;
+    max-width: 1100px;
+    background: white;
+    color: #003366;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 3px solid #7048e8; /* Purple border */
+}
+
+/* Left Section - Transport Info */
+.ticket-sidebar {
+    background:#011b34;
+    color: white;
+    width: 14%;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.ticket-sidebar p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 160px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Middle Section - Ticket Details */
+.ticket-main {
+    flex: 1;
+    padding: 20px;
+    border-right: 2px dashed #003366;
+}
+
+/* Right Section - DIU Branding */
+.ticket-right {
+    width: 30%;
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 8px;
+}
+
+.ticket-right h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Ticket Information */
+.ticket h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.ticket p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Dashed line styling */
+.ticket-main hr {
+    border: none;
+    border-top: 5px dashed #003366;
+    margin: 10px 0;
+}
+
+/* Rightmost Passenger Information */
+.ticket-passenger {
+    width: 20%;
+    background: #011b34;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.ticket-passenger h4 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ticket-passenger p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Make Route Bold */
+.route-info {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Adjust for Mobile View */
+@media (max-width: 768px) {
+    .ticket {
+        flex-direction: column;
+    }
+
+    .ticket-sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .ticket-sidebar h4 {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .ticket-main {
+        border-right: none;
+        border-bottom: 2px dashed #003366;
+    }
+
+    .ticket-right {
+        width: 100%;
+        text-align: right;
+    }
+}

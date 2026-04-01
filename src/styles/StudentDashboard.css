@@ -1,0 +1,28 @@
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 seats per row */
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .seat {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .seat.available {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .seat.booked {
+    background-color: #f44336;
+    color: white;
+    cursor: not-allowed;
+  }
+  
